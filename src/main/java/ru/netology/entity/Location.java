@@ -32,4 +32,24 @@ public class Location {
     public int getBuiling() {
         return builing;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        // 1
+        if (this == o) {
+            return true;
+        }
+
+        // 2
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        // 3
+        Location location = (Location) o;
+        return city.equals(location.city) &&
+               country.equals(location.country) &&
+               street.equals(location.street) &&
+               builing == location.builing;
+    }
 }
